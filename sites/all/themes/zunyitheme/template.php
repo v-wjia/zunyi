@@ -125,10 +125,10 @@ function zunyitheme_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
     $form['search_block_form']['#title'] = t('Search');
     $form['actions']['submit']['#attributes']['alt'] = "全站搜索";
-    $form['actions']['submit']['#attributes']['class'][] = "search-btn";
+    $form['actions']['submit']['#attributes']['class'][] = "button";
     $form['actions']['submit']['#value'] = "";
     $form['search_block_form']['#attributes']['class'] = array("input-ban");
-    $form['search_block_form']['#attributes']['placeholder'] = array("搜索");
+    $form['search_block_form']['#attributes']['placeholder'] = array("输入关键词");
   }
 }
 

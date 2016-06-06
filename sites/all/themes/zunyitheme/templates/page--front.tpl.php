@@ -67,91 +67,62 @@
     <div id="page">
     <div class="menuheader">
         <div class="con">
-            <span class="logo"><a href="/index.php"><img src="<?php echo cqtheme160301_get_path() ?>/images/logo.png" alt=""></a></span>
-            <!--<ul class="nav">-->
+            <span class="logo"><a href="/"><img src="/<?php echo path_to_theme(); ?>/images/logo.png" alt=""></a></span>
             <?php
             $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
             print drupal_render($main_menu_tree);
             ?>
-            <!--</ul>-->
+
             <div class="nav_btn_wrapper">
                 <span class="nav_btn"><a href="http://odata-zyhc.chinacloudapp.cn" target="_blank">开放数据开台</a></span>
                 <div class="yy"></div>
             </div>
             <div class="login"><span><a href="/user/login">登录</a></span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="/user/register">注册</a></span></div>
-            <div class="search"><input type="text" placeholder="输入关键词"><button></button></div>
-        </div>
-    </div>
-<!--    <div class="header-container">
-        <div class="header">
-            <div class="header-logo"><a href="/index.php">
-                    <img src="<?php echo cqtheme160301_get_path() ?>/img/logo_cq.png"/>
-                    <img src="<?php echo cqtheme160301_get_path() ?>/img/logo_bigdata.png" alt=""/></a>
-            </div>
-            <div class="header-nav">
-                <div class="header-list">
-                    <?php
-                    $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-                    print drupal_render($main_menu_tree); ?>
-                </div>
-            </div>
-            <div class="login-info">
-
-                <?php if ($page['front_side']): ?>
-                    <?php print render($page['front_side']); ?>
+            <div class="search">
+                <?php if ($page['search']) : ?>
+                <?php print render($page['search']); ?>
                 <?php endif; ?>
             </div>
         </div>
-    </div>-->
-
-    <div id="slidebox" class="flexslider">
-        <ul class="slides">
-            <li>
-                <div class="banner-container" style="background: #0076DB url(<?php echo cqtheme160301_get_path(); ?>/images/banner_1.png) no-repeat center center">
-                    <div class="banner">
-                        <h3>BIG DATA MATCH</h3>
-                        <h4>重庆开放数据创新应用大赛</h4>
-                        <p>发掘数据之智，引领巅峰对决，梦想之战一触即发。</p>
-                        <button class="index-btn" style="top:260px;">查看详情&nbsp;&nbsp;&nbsp;&gt;</button>
-                    </div>
-                </div>
-
-            </li>
-            <li>
-                <div class="banner-container" style="background:#222258 url(<?php echo cqtheme160301_get_path(); ?>/images/banner_2.jpg) no-repeat center center">
-                    <div class="banner">
-                        <h3>应用</h3>
-                        <h4>交通大数据</h4>
-                        <p>大数据时代，政府部门通过监测和分析实时交通数据，再通过交通大数据简洁、<br />直观的图形化界面展示出来，便可轻松、即时地获知优化交通的一切可能，<br />并及时制定相应的疏通、导流方案。</p>
-                        <button  class="index-btn">查看详情&nbsp;&nbsp;&nbsp;&gt;</button>
-                    </div>
-                </div>
-
-            </li>
-            <li>
-                <div class="banner-container" style="background:#EA3D32 url(<?php echo cqtheme160301_get_path(); ?>/images/banner_3.jpg) no-repeat center center">
-                    <div class="banner">
-                        <h3>签约</h3>
-                        <h4>渝北区政府携手微软共建重庆大数据平台</h4>
-                        <p>渝北区政府与微软（中国）有限公司、微软亚太科技有限公司签署战略合作备忘录，<br />三方将在大数据平台、大数据学院、创新孵化加速器平台、<br />大数据体验中心领域方面展开全面合作。</p>
-                        <button  class="index-btn">查看详情&nbsp;&nbsp;&nbsp;&gt;</button>
-                    </div>
-                </div>
-
-            </li>
-        </ul>
     </div>
-
-<?php if ($page['search']) : ?>
-<!--    <div class="search-container">
-        <div class="search">
-            <div class="search-input">
-                <?php print render($page['search']); ?>
+        
+    <div class="con1">
+        
+            <div id="slidebox" class="flexslider">
+            	<div class="con">
+                <ul class="slides">
+                    <li>
+                        <div class="con1_con">
+                            <p class="con1_con1">BIG DATA</p>
+                            <p class="con1_con2">开启大数据时代</p>
+                            <p class="con1_con3">遵义国家经济开发区 . 汇川区 ＋ 微软 联袂打造大数据平台</p>
+                            <img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">
+                        </div>
+                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.png"></span>
+                    </li>
+                    <li>
+                        <div class="con1_con">
+                            <p class="con1_con1">BIG DATA1</p>
+                            <p class="con1_con2">开启大数据时代</p>
+                            <p class="con1_con3">遵义国家经济开发区 . 汇川区 ＋ 微软 联袂打造大数据平台</p>
+                            <img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">
+                        </div>
+                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.png"></span>
+                    </li>
+                    <li>
+                        <div class="con1_con">
+                            <p class="con1_con1">BIG DATA2</p>
+                            <p class="con1_con2">开启大数据时代</p>
+                            <p class="con1_con3">遵义国家经济开发区 . 汇川区 ＋ 微软 联袂打造大数据平台</p>
+                            <img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">
+                        </div>
+                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.png"></span>
+                    </li>
+                </ul>
+                </div>
             </div>
         </div>
-    </div>
-    </div>-->
-<?php endif; ?>
+    </div>        
 
 
 <?php if ($page['data_resource']) : ?>
@@ -172,7 +143,7 @@
 
 
 <?php if ($page['footer']) : ?>
-<!--    <div id="footer-block">
+    <div id="footer-block">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -180,7 +151,7 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
 <?php endif; ?>
 
     </div>

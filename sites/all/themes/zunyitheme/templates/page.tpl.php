@@ -67,80 +67,27 @@
 
 <div id="page">
 
-<!--  <div class="row">-->
-<!--  <div class="con con0bg">-->
-<!--      <div class="con0">-->
-<!--        <div class="con0_1">-->
-<!--          <div class="con0_logo">-->
-<!--            <a href="/index.php"><img src="/--><?php //echo drupal_get_path('theme','cqtheme160301') ?><!--/img/logo_70x55.png" class="con0_1_1"/>-->
-<!--              <img src="/--><?php //echo drupal_get_path('theme','cqtheme160301') ?><!--/img/logo.jpg" class="con0_1_2"/></a>-->
-<!--          </div>-->
-<!--          <div class="con0_nav">-->
-<!--            --><?php
-//            $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-//            print drupal_render($main_menu_tree); ?>
-<!--          </div>-->
-<!--          <ul class="con0_nav">-->
-<!--            --><?php //if ($page['front_side']): ?>
-<!--              --><?php //print render($page['front_side']); ?>
-<!--            --><?php //endif; ?>
-<!--          </ul>-->
-<!--          <!--                <div class="con0_user">-->
-<!--                              <img src="img/user.png">-->
-<!--                              <p class="con0_user_p"><span>hi, </span><span>rex</span><span> | 个人中心</span></p>-->
-<!--                          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  <div class="menuheader">
+        <div class="con">
+            <span class="logo"><a href="/"><img src="/<?php echo path_to_theme(); ?>/images/logo.png" alt=""></a></span>
+            <?php
+            $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+            print drupal_render($main_menu_tree);
+            ?>
 
-  <div class="header-container">
-    <div class="header">
-      <div class="header-logo"><a href="/index.php">
-          <img src="/<?php echo cqtheme160301_get_path() ?>/img/logo_cq.png"/>
-          <img src="/<?php echo cqtheme160301_get_path() ?>/img/logo_bigdata.png" alt="" /></a>
-      </div>
-      <div class="header-nav">
-        <div class="header-list">
-          <?php
-          $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-          print drupal_render($main_menu_tree);?>
+            <div class="nav_btn_wrapper">
+                <span class="nav_btn"><a href="http://odata-zyhc.chinacloudapp.cn" target="_blank">开放数据开台</a></span>
+                <div class="yy"></div>
+            </div>
+            <div class="login"><span><a href="/user/login">登录</a></span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="/user/register">注册</a></span></div>
+            <div class="search">
+                <!--<input type="text" placeholder="输入关键词"><button></button>-->
+                <?php if ($page['search']) : ?>
+                <?php print render($page['search']); ?>
+                <?php endif; ?>
+            </div>
         </div>
-
-      </div>
-      <div class="login-info">
-
-        <?php if ($page['front_side']): ?>
-          <?php print render($page['front_side']); ?>
-        <?php endif; ?>
-      </div>
     </div>
-  </div>
-
-<!--  --><?php //if($page['search']) : ?>
-<!--      <div class="row">-->
-<!--        <div class="con con2bg">-->
-<!--          <div class="con2">-->
-<!--            <div style="height:0px; overflow:hidden;">&nbsp;</div>-->
-<!--            <div class="c21">-->
-<!--              --><?php //print render($page['search']); ?>
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--  --><?php //endif; ?>
-  <?php if($page['search']) : ?>
-  <div class="search-container">
-    <div class="search">
-      <div class="search-input">
-<!--        <div class="search-icon"></div>-->
-        <?php print render($page['search']); ?>
-      </div>
-    </div>
-  </div>
-</div>
-<?php endif; ?>
-
 
 
 
@@ -221,32 +168,9 @@
     </div>
   <?php endif; ?>
 
-<!--    <div id="main-content">-->
-<!--    <div class="container">-->
       <div class="row">
 
         <div class="con condetailbg">
-
-<!--          <header id="masthead" class="site-header container" role="banner">-->
-<!--            <div class="row">-->
-<!--              <div id="logo" class="site-branding col-sm-6">-->
-<!--                --><?php //if ($logo): ?><!--<div id="site-logo"><a href="--><?php //print $front_page; ?><!--" title="--><?php //print t('Home'); ?><!--">-->
-<!--                    <img src="--><?php //print $logo; ?><!--" alt="--><?php //print t('Home'); ?><!--" />-->
-<!--                  </a></div>--><?php //endif; ?>
-<!--                <h1 id="site-title">-->
-<!--                  <a href="--><?php //print $front_page; ?><!--" title="--><?php //print t('Home'); ?><!--">--><?php //print $site_name; ?><!--</a>-->
-<!--                </h1>-->
-<!--              </div>-->
-<!--              <div class="col-sm-6 mainmenu">-->
-<!--                <div class="mobilenavi"></div>-->
-<!--                <nav id="navigation" role="navigation">-->
-<!---->
-<!---->
-<!--                </nav>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </header>-->
-
           <div style="height:0px; overflow:hidden;">&nbsp;</div>
           <div class="condetail">
             <div style="height:0px; overflow:hidden;">&nbsp;</div>
@@ -261,15 +185,11 @@
 
         <?php endif; ?>
         <div id="primary" class="content-area col-sm-<?php print $primary_col; ?>">
-<!--          <section id="content" role="main" class="clearfix">-->
 
 
             <?php print $messages; ?>
             <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
             <div id="content-wrap">
-<!--              --><?php //print render($title_prefix); ?>
-<!--              --><?php //if ($title): ?><!--<h1 class="page-title">--><?php //print $title; ?><!--</h1>--><?php //endif; ?>
-<!--              --><?php //print render($title_suffix); ?>
               <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
               <?php print render($page['help']); ?>
               <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
@@ -278,12 +198,6 @@
               <?php print render($page['content']); ?>
                 </div>
               </div>
-<!--          </section>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 
     </div>
     </div>
@@ -300,75 +214,11 @@
     </div>
   <?php endif; ?>
 
-  <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third'] || $page['footer_fourth']): ?>
-    <?php $footer_col = ( 12 / ( (bool) $page['footer_first'] + (bool) $page['footer_second'] + (bool) $page['footer_third'] + (bool) $page['footer_fourth'] ) ); ?>
-    <div id="bottom">
-
-        <div class="row">
-          <?php if($page['footer_first']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_first']); ?>
-          </div><?php endif; ?>
-          <?php if($page['footer_second']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_second']); ?>
-          </div><?php endif; ?>
-          <?php if($page['footer_third']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_third']); ?>
-          </div><?php endif; ?>
-          <?php if($page['footer_fourth']): ?><div class="footer-block col-sm-<?php print $footer_col; ?>">
-            <?php print render ($page['footer_fourth']); ?>
-          </div><?php endif; ?>
-        </div>
-
-    </div>
-  <?php endif; ?>
-
-<!--  <footer id="colophon" class="site-footer" role="contentinfo">-->
-<!--    <div class="container">-->
-<!--      <div class="row">-->
-<!--        <div class="fcred col-sm-12">-->
-<!--          --><?php //print t('Copyright'); ?><!-- &copy; --><?php //echo date("Y"); ?><!-- <a href="--><?php //print $front_page; ?><!--">--><?php //print $site_name; ?><!--</a>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-          <div class="footer-container">
-            <div class="footer">
-              <div class="footer-logo">
-                <img src="/<?php echo cqtheme160301_get_path(); ?>/img/chinacqlogo_1.png" alt=""/>
-                <img src="/<?php echo cqtheme160301_get_path(); ?>/img/MSFT_logo_rgb.png" alt=""/>
-              </div>
-              <div class="copy-info">
-                <p>Copyright 2015 www.cq.gov.cn All Rights Reserved.</p>
-                <p>重庆市人民政府版权所有 重庆市人民政府办公厅主办</p>
-                <p>ICP备案：渝ICP备05003300号</p>
-                <p>国际联网备案：渝公网备500000012-00013</p>
-              </div>
-              <div class="wecode">
-                <ul>
-                  <li>
-                    <img src="/<?php echo cqtheme160301_get_path(); ?>/img/2-D_1.png" alt=""/>
-                    <p>重庆市政府网<br/>新浪微博</p>
-                  </li>
-                  <li>
-                    <img src="/<?php echo cqtheme160301_get_path(); ?>/img/2-D_2.png" alt=""/>
-                    <p>重庆市政府网<br/>腾讯微博</p>
-                  </li>
-                  <li>
-                    <img src="/<?php echo cqtheme160301_get_path(); ?>/img/2-D_3.png" alt=""/>
-                    <p>Microsoft云科技<br/>官方微信</p>
-                  </li>
-                  <li>
-                    <img src="/<?php echo cqtheme160301_get_path(); ?>/img/2-D_4.png" alt=""/>
-                    <p>Microsoft<br/>亚太云生态</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
 
   </div>
 </div>
+    
+<?php require_once 'taxonomy-custom-footer.tpl.php';?>    
 
 
 

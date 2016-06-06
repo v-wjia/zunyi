@@ -26,7 +26,7 @@
         <p class="footer_con2">CP备案：渝ICP备05003300号</p>
         <p class="footer_con3">国际联网备案：渝公网备500000012-00013</p>
         <div class="footer_con4">
-            <span>汇川区政府官网</span><img src="images/footer1.png" alt=""><img src="images/footer1.png" alt="">
+            <span>汇川区政府官网</span><img src="/<?php echo path_to_theme(); ?>/images/footer1.png" alt=""><img src="/<?php echo path_to_theme(); ?>/images/footer1.png" alt="">
         </div>
         <div class="footer_con5 clearfix">
             <ul>
