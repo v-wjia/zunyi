@@ -377,7 +377,7 @@ function featured_display_block_view($delta = '')
                 
 //            var_dump($childList);
             $block['content'] = '<ul>';
-            $block['content'] .= '<li><span class="field-content"><a href="/'.$parentLink.'" '.(!empty($showActive) ? ' class="active" ': ' ').' >'.$parentName.'</a></span></li>';
+//            $block['content'] .= '<li><span class="field-content"><a href="/'.$parentLink.'" '.(!empty($showActive) ? ' class="active" ': ' ').' >'.$parentName.'</a></span></li>';
             $block['content'] .='<li><ul>';
             if (!empty($childList)) {
                 foreach ($childList as $k => $v) {
@@ -666,7 +666,7 @@ function theme_featured_application($variables)
     $more = $variables['more'];
 
 
-    $output = '<div class="con4">';
+    $output = '<div class="hc_con4">';
     $output .= '<div class="con">';
 
 //    $output .= '<div class="application-title">';
@@ -702,7 +702,7 @@ function theme_featured_trade($variables)
     $more = $variables['more'];
     $list = $variables['list'];
 
-    $output = '<div class="con3">';
+    $output = '<div class="hc_con3">';
     $output .= '<div class="con clearfix">';
 
 //    $output .= '<div class="trade-title">';
@@ -753,7 +753,7 @@ function theme_featured_resource($variables)
     $more = $variables['more'];
     $list = $variables['list'];
 
-    $output = '<div class="con2">';
+    $output = '<div class="hc_con2">';
     $output .= '<div class="con clearfix">';
 
 //    $output .= '<div class="class="con2_title"">';
@@ -811,7 +811,7 @@ function theme_featured_perception($variables)
     $more = $variables['more'];
     $list = $variables['list'];
 
-    $output = '<div class="con5 clearfix">';
+    $output = '<div class="hc_con5 clearfix">';
     $output .= '<div class="con">';
 
 //    $output .= '<div class="iot-title">';

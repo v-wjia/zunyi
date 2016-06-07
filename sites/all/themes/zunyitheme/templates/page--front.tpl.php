@@ -86,7 +86,7 @@
         </div>
     </div>
         
-    <div class="con1">
+    <div class="hc_con1">
         
             <div id="slidebox" class="flexslider">
             	<div class="con">

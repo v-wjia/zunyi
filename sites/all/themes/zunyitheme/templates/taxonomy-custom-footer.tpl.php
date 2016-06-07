@@ -20,7 +20,7 @@
     </div>
 <?php endif; ?>
 
-<div class="footer clearfix">
+<div class="hc_footer clearfix">
     <div class="con">
         <p class="footer_con1">Copyright 2015 www.cq.gov.cn All Rights Reserved.</p>
         <p class="footer_con2">CP备案：渝ICP备05003300号</p>
