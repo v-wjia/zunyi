@@ -1,48 +1,213 @@
-<?php require_once 'taxonomy-custom-header.tpl.php';?>
+<?php
+/**
+ * @file
+ * Default theme implementation to display a single Drupal page.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - $base_path: The base URL path of the Drupal installation. At the very
+ *   least, this will always default to /.
+ * - $directory: The directory the template is located in, e.g. modules/system
+ *   or themes/garland.
+ * - $is_front: TRUE if the current page is the front page.
+ * - $logged_in: TRUE if the user is registered and signed in.
+ * - $is_admin: TRUE if the user has permission to access administration pages.
+ *
+ * Site identity:
+ * - $front_page: The URL of the front page. Use this instead of $base_path,
+ *   when linking to the front page. This includes the language domain or
+ *   prefix.
+ * - $logo: The path to the logo image, as defined in theme configuration.
+ * - $site_name: The name of the site, empty when display has been disabled
+ *   in theme settings.
+ * - $site_slogan: The slogan of the site, empty when display has been disabled
+ *   in theme settings.
+ *
+ * Navigation:
+ * - $main_menu (array): An array containing the Main menu links for the
+ *   site, if they have been configured.
+ * - $secondary_menu (array): An array containing the Secondary menu links for
+ *   the site, if they have been configured.
+ * - $breadcrumb: The breadcrumb trail for the current page.
+ *
+ * Page content (in order of occurrence in the default page.tpl.php):
+ * - $title_prefix (array): An array containing additional output populated by
+ *   modules, intended to be displayed in front of the main title tag that
+ *   appears in the template.
+ * - $title: The page title, for use in the actual HTML content.
+ * - $title_suffix (array): An array containing additional output populated by
+ *   modules, intended to be displayed after the main title tag that appears in
+ *   the template.
+ * - $messages: HTML for status and error messages. Should be displayed
+ *   prominently.
+ * - $tabs (array): Tabs linking to any sub-pages beneath the current page
+ *   (e.g., the view and edit tabs when displaying a node).
+ * - $action_links (array): Actions local to the page, such as 'Add menu' on the
+ *   menu administration interface.
+ * - $feed_icons: A string of all feed icons for the current page.
+ * - $node: The node object, if there is an automatically-loaded node
+ *   associated with the page, and the node ID is the second argument
+ *   in the page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - $page['help']: Dynamic help text, mostly for admin pages.
+ * - $page['content']: The main content of the current page.
+ * - $page['sidebar_first']: Items for the first sidebar.
+ * - $page['sidebar_second']: Items for the second sidebar.
+ * - $page['header']: Items for the header region.
+ * - $page['footer']: Items for the footer region.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_page()
+ * @see template_process()
+ */
+?>
 
-      <div class="row">
+<div id="page">
 
-        <div class="con condetailbg">
+  <div class="menuheader">
+        <div class="con">
+            <span class="logo"><a href="/"><img src="/<?php echo path_to_theme(); ?>/images/logo.png" alt=""></a></span>
+            <?php
+            $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+            print drupal_render($main_menu_tree);
+            ?>
 
-          <div style="height:0px; overflow:hidden;">&nbsp;</div>
-          <div class="condetail">
-              <div style="height:0px; overflow:hidden;">&nbsp;</div>
-
-              <?php if ($page['sidebar_first']) {
-                  $primary_col = 8;
-              } else {
-                  $primary_col = 12;
-              } ?>
-            <?php if ($page['sidebar_first']): ?>
-
-                  <div class="cd_nav">
-                  <?php print render($page['sidebar_first']); ?>
-                  </div>
-
-
-                  <?php endif; ?>
-              <div id="primary" class="content-area col-sm-<?php print $primary_col; ?>">
-
-                      <?php print $messages; ?>
-                      <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
-                  <div id="content-wrap">
-                          <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
-                          <?php print render($page['help']); ?>
-                    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-                      <div class="cd_content">
-                          <?php if (theme_get_setting('breadcrumbs') && !isset($node)): ?>
-                              <?php if ($breadcrumb): ?>
-                                  <div class="cd_content_list">
-                                      <div id="breadcrumbs"><?php print $breadcrumb; ?></div>
-                                  </div>
-                    <?php endif; ?>
+            <div class="nav_btn_wrapper">
+                <span class="nav_btn"><a href="http://odata-zyhc.chinacloudapp.cn" target="_blank">开放数据开台</a></span>
+                <div class="yy"></div>
+            </div>
+            <div class="login"><span><a href="/user/login">登录</a></span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="/user/register">注册</a></span></div>
+            <div class="search">
+                <!--<input type="text" placeholder="输入关键词"><button></button>-->
+                <?php if ($page['search']) : ?>
+                <?php print render($page['search']); ?>
                 <?php endif; ?>
-                <?php print render($page['content']); ?>
-                      </div>
-                  </div>
+            </div>
+        </div>
+    </div>
 
-              </div>
+
+
+  <?php if ($is_front): ?>
+  <?php if (theme_get_setting('slideshow_display','cqtheme160301')): ?>
+  <?php 
+    $slide1_head = check_plain(theme_get_setting('slide1_head','cqtheme160301'));   $slide1_desc = check_markup(theme_get_setting('slide1_desc','cqtheme160301'), 'full_html'); $slide1_url = check_plain(theme_get_setting('slide1_url','cqtheme160301'));
+    $slide2_head = check_plain(theme_get_setting('slide2_head','cqtheme160301'));   $slide2_desc = check_markup(theme_get_setting('slide2_desc','cqtheme160301'), 'full_html'); $slide2_url = check_plain(theme_get_setting('slide2_url','cqtheme160301'));
+    $slide3_head = check_plain(theme_get_setting('slide3_head','cqtheme160301'));   $slide3_desc = check_markup(theme_get_setting('slide3_desc','cqtheme160301'), 'full_html'); $slide3_url = check_plain(theme_get_setting('slide3_url','cqtheme160301'));
+  ?>
+  <div id="slidebox" class="flexslider">
+    <ul class="slides">
+      <li>
+        <img src="<?php print base_path() . drupal_get_path('theme', 'cqtheme160301') . '/images/slide-image-1.jpg'; ?>"/>
+        <?php if($slide1_head || $slide1_desc) : ?>
+          <div class="flex-caption">
+            <h2><?php print $slide1_head; ?></h2><?php print $slide1_desc; ?>
+            <a class="frmore" href="<?php print url($slide1_url); ?>"> <?php print t('READ MORE'); ?> </a>
           </div>
+        <?php endif; ?>
+      </li>
+      <li>
+        <img src="<?php print base_path() . drupal_get_path('theme', 'cqtheme160301') . '/images/slide-image-2.jpg'; ?>"/>
+        <?php if($slide2_head || $slide2_desc) : ?>
+          <div class="flex-caption">
+            <h2><?php print $slide2_head; ?></h2><?php print $slide2_desc; ?>
+            <a class="frmore" href="<?php print url($slide2_url); ?>"> <?php print t('READ MORE'); ?> </a>
+          </div>
+        <?php endif; ?>
+      </li>
+      <li>
+        <img src="<?php print base_path() . drupal_get_path('theme', 'cqtheme160301') . '/images/slide-image-3.jpg'; ?>"/>
+        <?php if($slide3_head || $slide3_desc) : ?>
+          <div class="flex-caption">
+            <h2><?php print $slide3_head; ?></h2><?php print $slide3_desc; ?>
+            <a class="frmore" href="<?php print url($slide3_url); ?>"> <?php print t('READ MORE'); ?> </a>
+          </div>
+        <?php endif; ?>
+      </li>
+    </ul><!-- /slides -->
+    <div class="doverlay"></div>
+  </div>
+  <?php endif; ?>
+  <?php endif; ?>
+
+
+
+
+  <?php if($page['preface_first'] || $page['preface_middle'] || $page['preface_last']) : ?>
+    <?php $preface_col = ( 12 / ( (bool) $page['preface_first'] + (bool) $page['preface_middle'] + (bool) $page['preface_last'] ) ); ?>
+    <div id="preface-area">
+      <div class="container">
+        <div class="row">
+          <?php if($page['preface_first']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+            <?php print render ($page['preface_first']); ?>
+          </div><?php endif; ?>
+          <?php if($page['preface_middle']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+            <?php print render ($page['preface_middle']); ?>
+          </div><?php endif; ?>
+          <?php if($page['preface_last']): ?><div class="preface-block col-sm-<?php print $preface_col; ?>">
+            <?php print render ($page['preface_last']); ?>
+          </div><?php endif; ?>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
+
+
+  <?php if($page['header']) : ?>
+    <div id="header-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <?php print render($page['header']); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
+
+    <div class="row listbg">
+    	<div class="con_mbx">
+        <div class="con">
+		<!--面包屑-->
+		<?php if (theme_get_setting('breadcrumbs') && !isset($node)): ?><?php if ($breadcrumb): ?><div class="cd_content_list"><div id="breadcrumbs"><?php print $breadcrumb; ?></div></div><?php endif; ?><?php endif; ?>
+        <!--面包屑-->
+        </div>
+        </div>
+        <div class="con condetailbg">
+            <div style="height:0px; overflow:hidden;">&nbsp;</div>
+            <div class="condetail">
+                <div style="height:0px; overflow:hidden;">&nbsp;</div>
+                
+
+                <?php if ($page['sidebar_first']) {
+                    $primary_col = 8;
+                } else {
+                    $primary_col = 12;
+                } ?>
+
+                <?php if ($page['sidebar_first']): ?>
+                    <div class="cd_nav">
+                        <?php print render($page['sidebar_first']); ?>
+                    </div>
+                    <?php endif; ?>
+
+                <div id="primary" class="content-area col-sm-<?php print $primary_col; ?>">
+                        <?php print $messages; ?>
+                        <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><?php endif; ?>
+                    <div id="content-wrap">
+                        <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper clearfix"><?php print render($tabs); ?></div><?php endif; ?>
+                        <?php print render($page['help']); ?>
+                        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+                        <div class="cd_content">
+                            <?php print render($page['content']); ?>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
   <?php if($page['footer']) : ?>
     <div id="footer-block">
@@ -56,9 +221,11 @@
     </div>
   <?php endif; ?>
 
-    <?php require_once 'taxonomy-custom-footer.tpl.php';?>
+
   </div>
 </div>
+    
+<?php require_once 'taxonomy-custom-footer.tpl.php';?>    
 
 
 

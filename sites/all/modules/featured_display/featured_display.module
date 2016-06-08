@@ -238,20 +238,44 @@ function featured_display_block_view($delta = '')
         case 'display_application': // 如果调用了数据应用
             if (user_access('access content')) {
 
-                $category = '数据应用';
+//                $category = '数据应用';
+//
+//                $term = current(taxonomy_get_term_by_name($category));
+//                if (isset($term)) {
+//                    $nids = taxonomy_select_nodes($term->tid);
+//                    $nodes = _get_promoted_nodes($nids);
+//                    $items = array();
+//                    foreach ($nodes as $node) {
+//                        $items[] = array('title' => $node->title, 'img' => get_node_image_url($node->nid), 'link' => drupal_get_path_alias('node/' . $node->nid));
+//                    }
+//                    $block['content'] = array('#theme' => 'featured_application', '#title' => $term->name, "#items" => $items, "#more" => array('title' => '更多', 'link' => drupal_get_path_alias('taxonomy/term/' . $term->tid)));
+//                    return $block;
+//                }
 
-                $term = current(taxonomy_get_term_by_name($category));
-                if (isset($term)) {
-                    $nids = taxonomy_select_nodes($term->tid);
-                    $nodes = _get_promoted_nodes($nids);
-                    $items = array();
-                    foreach ($nodes as $node) {
-                        $items[] = array('title' => $node->title, 'img' => get_node_image_url($node->nid), 'link' => drupal_get_path_alias('node/' . $node->nid));
+                
+                $content = array();
+                $list = array();
+                $term = taxonomy_get_term_by_name('数据应用');
+                $currentTerm = current($term);
+                if (!empty($currentTerm)) {
+                    $term = current($term);
+                    $children = taxonomy_get_children($term->tid);
+                    $list['#theme'] = 'featured_application';
+                    foreach ($children as $child) {
+                        $list['#items'][] = array(
+                            'title' => $child->name,
+                            'description' => $child->description,
+                            'link' => drupal_get_path_alias('taxonomy/term/' . $child->tid),
+                            'img' => variable_get('featured_taxonomy_pic_' . $child->tid, drupal_get_path('module', 'featured_display') . '/img/icon/icon_1_1.png'),
+                        );
                     }
-                    $block['content'] = array('#theme' => 'featured_application', '#title' => $term->name, "#items" => $items, "#more" => array('title' => '更多', 'link' => drupal_get_path_alias('taxonomy/term/' . $term->tid)));
+                    $content['#items'] = $list['#items'];
+                    $content['#theme'] = 'featured_application';
+                    $content['#title'] = $term->name;
+                    $content['#more'] = array('title' => t('更多'), 'link' => drupal_get_path_alias('taxonomy/term/' . $term->tid));
+                    $block['content'] = $content;
                     return $block;
                 }
-
             }
             break;
 
@@ -282,7 +306,7 @@ function featured_display_block_view($delta = '')
                 }
                 $list['#theme'] = 'featured_trade';
                 $list['#title'] = $term->name;
-                $list['#more'] = array('title' => '更多', 'link' => 'http://cqshop.chinacloudsites.cn/');
+                $list['#more'] = array('title' => '更多', 'link' => 'http://datamarket.chinacloudapp.cn/');
                 $block['content'] = $list;
                 return $block;
 
