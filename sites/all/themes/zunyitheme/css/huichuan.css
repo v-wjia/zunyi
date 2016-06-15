@@ -182,7 +182,7 @@
     text-align: center;
     color: #FFFFFF;
     font-size: 42px;
-    margin-top: 75px;
+    /*margin-top: 75px;*/
     margin-bottom: 30px;
 }
 
@@ -534,19 +534,19 @@
 }
 
 .hc_con5 ul li.li1 {
-    background: url("../images/con4_1.png") no-repeat center center;
+    background: url("../images/con4_1.jpg") no-repeat center center;
 }
 
 .hc_con5 ul li.li2 {
-    background: url("../images/con4_2.png") no-repeat center center;
+    background: url("../images/con4_2.jpg") no-repeat center center;
 }
 
 .hc_con5 ul li.li3 {
-    background: url("../images/con4_3.png") no-repeat center center;
+    background: url("../images/con4_3.jpg") no-repeat center center;
 }
 
 .hc_con5 ul li.li4 {
-    background: url("../images/con4_4.png") no-repeat center center;
+    background: url("../images/con4_4.jpg") no-repeat center center;
 }
 
 .hc_footer {

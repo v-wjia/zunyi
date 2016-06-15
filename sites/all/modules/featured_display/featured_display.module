@@ -806,22 +806,24 @@ function theme_featured_resource_list($variables)
     if (empty($items)) {
         return $output;
     }
+    static $flag=1;
     for ($i = 0; $i < 2; $i++) {
         $output .= '<div class="source-list">';
-        $output .= '<ul>';
+        $output .= '<ul>';        
         for ($j = 0; $j < 4; $j++) {
             $item = current($items);
             if (!empty($item)) {
-                $output .= '<li class="li'.($j+1).'">' . '<a href="' . $item['link'] . '">' . $item['title'] . '</a></li>';
+                $output .= '<li class="li'.$flag.'">' . '<a href="' . $item['link'] . '">' . $item['title'] . '</a></li>';
             } else {
                 break;
             }
             next($items);
+            $flag++;
         }
 
         $output .= '</ul>';
         $output .= '</div>';
-
+        
     }
     return $output;
 }
@@ -867,7 +869,7 @@ function theme_featured_perception_list($variables)
 
 //    $output .= '<div class="iot-list">';
     $output .= '<ul>';
-    for ($j = 0; $j < 3; $j++) {
+    for ($j = 0; $j < 4; $j++) {
 
         
         $item = current($items);
