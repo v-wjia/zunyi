@@ -157,11 +157,11 @@
 }
 
 .hc_con1 .con1_con .con1_con2 {
-    font-size: 65px;
+    font-size: 34px;
 }
 
 .hc_con1 .con1_con .con1_con3 {
-    font-size: 26px;
+    font-size: 20px;
     line-height: 250%;
 }
 
@@ -589,14 +589,32 @@
 .hc_footer .footer_con5 ul {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 16px;
 }
 
-.hc_footer .footer_con5 ul li {
+.hc_footer .footer_con5 ul li.li1{
     width: 150px;
     height: 140px;
     display: inline-block;
-    background: url("../images/qrcode.png") no-repeat center 15px;
+    background: url("../images/2-D_2.png") no-repeat center 15px;
+    font-size: 13px;
+    position: relative;
+}
+
+.hc_footer .footer_con5 ul li.li2{
+    width: 150px;
+    height: 140px;
+    display: inline-block;
+    background: url("../images/2-D_4.png") no-repeat center 15px;
+    font-size: 13px;
+    position: relative;
+}
+
+.hc_footer .footer_con5 ul li.li3{
+    width: 150px;
+    height: 140px;
+    display: inline-block;
+    background: url("../images/2-D_3.png") no-repeat center 15px;
     font-size: 13px;
     position: relative;
 }
@@ -1935,4 +1953,24 @@ border-left: 1px solid; border-right: 1px solid; height: 40px; margin-left: -36p
 .col-sm-8 {
     width: 90%;
 }
-
+.footer-logo {
+    position:absolute;
+    top:24px;
+}
+.footer-logo img:first-child {
+    border-right: 2px solid #565656;
+    float: left;
+    padding-right: 14px;
+}
+.footer-logo img:last-child {
+    float: left;
+    padding-left: 14px;
+    padding-top: 4px;
+}
+.copy-info {
+    color: #d6d7d9;
+    font-size: 12px;
+    line-height: 180%;
+    position: absolute;
+    top: 64px;
+}

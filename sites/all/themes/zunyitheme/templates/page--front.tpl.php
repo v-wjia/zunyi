@@ -93,30 +93,33 @@
                 <ul class="slides">
                     <li>
                         <div class="con1_con">
-                            <p class="con1_con1">BIG DATA</p>
-                            <p class="con1_con2">开启大数据时代</p>
-                            <p class="con1_con3">遵义国家经济开发区 . 汇川区 ＋ 微软 联袂打造大数据平台</p>
-                            <img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">
+                            <p class="con1_con1">BIG DATA MATCH</p>
+                            <p class="con1_con2">开放数据创新应用大赛</p>
+                            <p class="con1_con3">发掘数据之智，引领巅峰对决，梦想之战一触即发。<br><br></p>
+                            <!--<img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">-->
                         </div>
-                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.png"></span>
+                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.gif"></span>
                     </li>
                     <li>
                         <div class="con1_con">
-                            <p class="con1_con1">BIG DATA1</p>
-                            <p class="con1_con2">开启大数据时代</p>
-                            <p class="con1_con3">遵义国家经济开发区 . 汇川区 ＋ 微软 联袂打造大数据平台</p>
-                            <img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">
+                            <p class="con1_con1">应用</p>
+                            <p class="con1_con2">大数据时代</p>
+                            <p class="con1_con3">
+                                随着大数据的来临，政府部门通过监测和分析实时数据，再通过大数据简洁、<br>
+                                直观的图形化界面展示出来，让大数据成为政府转型的科技动力
+                                <br></p>
+                            <!--<img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">-->
                         </div>
-                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.png"></span>
+                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.gif"></span>
                     </li>
                     <li>
                         <div class="con1_con">
-                            <p class="con1_con1">BIG DATA2</p>
-                            <p class="con1_con2">开启大数据时代</p>
-                            <p class="con1_con3">遵义国家经济开发区 . 汇川区 ＋ 微软 联袂打造大数据平台</p>
-                            <img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">
+                            <p class="con1_con1">签约</p>
+                            <p class="con1_con2">汇川区政府携手微软共建大数据平台</p>
+                            <p class="con1_con3">汇川区政府与微软（中国）有限公司签署战略合作备忘录，<br>双方将在大数据平台、大数据交易、创新孵化加速器平台、<br>大数据体验中心领域方面展开全面合作。</p>
+                            <!--<img id="microsoftlogo" style="width:131px;height:27px" src="/<?php echo path_to_theme(); ?>/images/microsoft.png">-->
                         </div>
-                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.png"></span>
+                        <span class="cm"><img alt=""  src="/<?php echo path_to_theme(); ?>/images/c1-1.gif"></span>
                     </li>
                 </ul>
                 </div>

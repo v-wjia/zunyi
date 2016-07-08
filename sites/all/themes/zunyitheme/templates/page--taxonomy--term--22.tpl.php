@@ -715,232 +715,23 @@ jQuery(document).ready(function(){
                                                                         </script>   
                                                                     </div>
 
-                                                                    <div style="width:18px; height:18px; float:left; margin-top:13px;margin-right:10px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/shengchanzongzhi.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>
+                                                                    <div style="width:18px; height:18px; float:left; margin-top:13px;margin-right:10px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/shengchanzongzhi.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>
 
-                                                                    <div style="background:#f9f9f9; width:150px;height:225px; float:left; position:relative; left:15px; margin:0px; padding:10px 20px 10px 5px; margin-left:13px;"> <p style=" font-size:14px; font:bold;line-height:18px;  text-align:center;">说明dasfdsafdsafdsafd
-                                                                            safdsafdsafdsafdssfds
-                                                                            afdsafdsafdsafdsafdsa
-                                                                            fdssfdsafdsafdsafdsaf
-                                                                            dsafdsafdsafdssfdsafd
-                                                                            safdsafdsafdsafdsafds
-                                                                            sfdsafdsafdsafdsafdsa
-                                                                            dsafdsafdssfdsafdsafd
-                                                                            safdsafdsafdsafdsafds
-                                                                            afdsafdsafdsafdsafdsa
-                                                                            fdsafdsafdsa</p></div>  
+                                                                    <div style="background:#f9f9f9; width:150px;height:225px; float:left; position:relative; left:15px; margin:0px; padding:10px 20px 10px 5px; margin-left:13px;"> <p style=" font-size:14px; font:bold;line-height:18px;  text-align:center;">说明</p></div>  
 
-                                                                    <div style="width:300px; height:225px; float:left; overflow:hidden; margin:10px 8px 5px 50px;">
-                                                                        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-                                                                        <div id="asdf" style="height: 225px; width: 393px;"></div>
-                                                                        <!-- ECharts单文件引入 -->
-                                                                        <script type="text/javascript">
-                                                                            // 路径配置
-                                                                            require.config({
-                                                                            paths: {
-                                                                            echarts: "http://echarts.baidu.com/build/dist"
-                                                                            }
-                                                                            });
-                                                                            require(
-                                                                            [
-                                                                                    "echarts",
-                                                                                    "echarts/chart/bar", // 使用柱状图就加载bar模块，按需加载
-                                                                                    "echarts/chart/line"
-                                                                            ],
-                                                                                    function(ec) {
-                                                                                    var axisData = [
-                                                                                            "2004年", "2005年", "2006年", "2007年", "2008年", "2009年", "2010年", "2011年", "2012年", "2013年", "2014年"
-                                                                                    ];
-                                                                                    // 基于准备好的dom，初始化echarts图表
-                                                                                    var myChart1 = ec.init(document.getElementById("asdf"));
-                                                                                    //设置数据
-                                                                                    var option = {
-                                                                                    //设置提示
-                                                                                    title: {
-                                                                                    text: '2004-2014年汇川区各年份固定资产投资情况',
-                                                                                            textStyle: {
-                                                                                            fontSize: 14,
-                                                                                                    fontFamily: "Microsoft YaHei"
-                                                                                            }
-                                                                                    // subtext: '数据来自汇川区统计局',
-                                                                                    },
-                                                                                            tooltip: {
-                                                                                            trigger: "axis",
-                                                                                                    showDelay: 0,
-                                                                                                    formatter: function(params) {
-                                                                                                    var res = params[0].name;
-                                                                                                    res += "<br/>  基本建设  : " + params[0].value;
-                                                                                                    res += "<br/>  更新改造  : " + params[1].value;
-                                                                                                    res += "<br/>  房地产投资 : " + params[2].value;
-                                                                                                    res += "<br/>  其他投资 : " + params[3].value;
-                                                                                                    return res;
-                                                                                                    }
-
-                                                                                            },
-                                                                                            //设置图例
-                                                                                            legend: {
-                                                                                            x: 'left',
-                                                                                                    y: '30',
-                                                                                                    textStyle: {
-                                                                                                    fontSize: 12,
-                                                                                                            fontFamily: "Microsoft YaHei"
-                                                                                                    },
-                                                                                                    data: ["基本建设", "更新改造", "房地产投资", "其他投资"]
-                                                                                            },
-                                                                                            //设置坐标轴
-                                                                                            xAxis: [{
-                                                                                            type: "category",
-                                                                                                    data: axisData
-                                                                                            }],
-                                                                                            yAxis: [{
-                                                                                            type: "value",
-                                                                                                    axisLabel: {
-                                                                                                    formatter: function(v) {
-                                                                                                    return v + " 万元";
-                                                                                                    }
-                                                                                                    }
-                                                                                            }],
-                                                                                            //设置数据
-                                                                                            series: [{
-                                                                                            "name": "基本建设",
-                                                                                                    "type": "line",
-                                                                                                    "data": [103143, 109763, 63220, 96962, 103163, 155353, 187586, 288075, 452316, 547188, 819425],
-                                                                                            }, {
-                                                                                            "name": "更新改造",
-                                                                                                    "type": "line",
-                                                                                                    "data": [52193, 54753, 72219, 65341, 85338, 82328, 80136, 144470, 344654, 294991, 304551],
-                                                                                            }, {
-                                                                                            "name": "房地产投资",
-                                                                                                    "type": "line",
-                                                                                                    "data": [65526, 77040, 92949, 123480, 155444, 96994, 84533, 165238, 188822, 349283, 450593],
-                                                                                            }, {
-                                                                                            "name": "其他投资",
-                                                                                                    "type": "line",
-                                                                                                    "data": [139, 256, 0, 0, 0, 0, 0, 0, 0, 320, 0]
-
-                                                                                            }]
-                                                                                    };
-                                                                                    // 为echarts对象加载数据 
-                                                                                    myChart1.setOption(option);
-                                                                                    }
-                                                                            );
-                                                                        </script>
+                                                                    <div style="float:left; overflow:hidden;margin-left:27px;">
+                                                                        
+                                                                        <img style="width:393px; height:225px;"src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/gudingzhichan.png"><a href="/<?php echo path_to_theme(); ?>/templates/t/2.html"> <img style="width:18px; height:18px;margin-top:10px;margin-left:-25px;" src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a>
                                                                     </div>
-                                                                    <div style="width:18px; height:18px; float:left; margin-top:13px; margin-left:40px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/2.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>
-
+                                                                    
                                                                 </div>
 
                                                                 <div>
-                                                                    <div style="width:300px; height:225px; float:left;margin:10px 8px 5px 16px;">
-
-                                                                        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-                                                                        <div id="main2" style="height:225px; width: 393px;"></div>
-                                                                        <!-- ECharts单文件引入 -->
-                                                                        <script type="text/javascript">
-                                                                           // 路径配置
-
-                                                                                                   require.config({
-                                                                                                   paths: {
-                                                                                                   echarts: 'http://echarts.baidu.com/build/dist'
-                                                                           }
-                                                                           });
-                                                                                                   require(
-                                                                                                   [
-                                                                                           'echarts',
-                                                                                                   'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
-                                                                           ],
-                                                                                                   function(ec) {
-                                                                                                   // 基于准备好的dom，初始化echarts图表
-
-                                                                                                   var myChart = ec.init(document.getElementById('main2'));
-                                                                                                   var option = {
-                                                                                                   title: {
-                                                                                                   textStyle: {
-                                                                                                   fontSize: 14,
-                                                                                                           fontFamily: "Microsoft YaHei"
-                                                                                                   },
-                                                                                                           text: '2011-2014年汇川区分镇公共财政支出情况（万元）'
-                                                                                                   },
-                                                                                                           tooltip: {
-                                                                                                           trigger: 'axis',
-                                                                                                                   showDelay: 0,
-                                                                                                                   formatter: function(params) {
-                                                                                                                   var res = params[0].name;                                 res += '<br/>  2011年 : ' + params[0].value;
-                                                                                                                   res += '<br/>  2012年 : ' + params[0].value;
-                                                                                                                   res += '<br/>  2013年 : ' + params[0].value;
-                                                                                                                   res += '<br/>  2014年 : ' + params[0].value;
-                                                                                                    return res;
-                                                                                                                   },
-                                                                                                                           <!-- backgr oundColor: 'rgba(255,2 55,255,0.7)',-->
-                                                                   <!-- a xisPointer: {  -->
-                                                                                                                           <!--     type: 'shadow'   -->
-                                                                   < !-- }, -- >
-                                                                                                           },
-                                                                                                           legend: {
-                                                                                                           x: 'left',
-                                                                                                                   y: '30',
-                                                                                                                   textStyle:{fontSize:12, fontFamily:"Microsoft YaHei"},
-                                                                                                                   data: ['2011', '2012', '2013', '2014']
-                                                                                                           },
-                                                                                                           toolbox: {
-                                                                                                           show: true,
-                                                                                                                   orient: 'vertical',
-                                                                                                                   y: 'center',
-                                                                                                                   feature: {
-                                                                                                                   mark: {
-                                                                                                                   show: true
-                                                                                                                   },
-                                                                                                                           dataView: {
-                                                                                                                           show: true,
-                                                                                                                                   readOnly: false
-                                                                                                                           },
-                                                                                                                           restore: {
-                                                                                                                           show: true
-                                                                               },
-                                                                                           saveAsImage: {
-                                                                                               show: true
-                                                                                           }
-                                                                                       }
-                                                                                   },
-                                                                                   calculable: true,
-                                                                                   grid: {
-                                                                                       y: 80,
-                                                                                       y2: 40,
-                                                                                       x2: 40
-                                                                                   },
-                                                                                   xAxis: [{
-                                                                                       type: 'category',
-                                                                                       data: ['上海办', '洗马办', '大连办', '高桥镇', '董公寺镇', '高坪镇', '泗渡镇', '板桥镇', '团泽镇']
-                                                                                   }],
-                                                                                   yAxis: [{
-                                                                                       type: 'value'
-                                                                                   }],
-                                                                                   series: [{
-                                                                                       "name": "2011",
-                                                                                       "type": "bar",
-                                                                                       "data": [964, 547, 619, 903, 1135, 2002, 1577, 1507, 1554]
-                                                                                   }, {
-                                                                                       "name": "2012",
-                                                                                       "type": "bar",
-                                                                                       "data": [1199, 887, 989, 5052, 1246, 2278, 1750, 1858, 1668]
-                                                                                   }, {
-                                                                                       "name": "2013",
-                                                                                       "type": "bar",
-                                                                                       "data": [1049, 799, 1037, 4878, 1253, 2583, 1827, 1841, 1792]
-                                                                                   }, {
-                                                                                       "name": "2014",
-                                                                                       "type": "bar",
-                                                                                       "data": [0, 0, 0, 0, 0, 0, 0, 0, 0]
-                                                                                   }, ]
-                                                                               };
-
-                                                                               // 为echarts对象加载数据 
-                                                                               myChart.setOption(option);
-                                                                           }
-                                                                       );
-                                                                        </script>
-
+                                                                    <div style="float:left;position: absolute; top: 260px;">
+                                                                        <img style="width:393px; height:225px;"src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/cizheng.png"> 
                                                                     </div>
-                                                                    <div style="width:18px; height:18px; float:left; margin-top:13px; margin-left:100px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/3.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>
+                                                                    <div style="width:18px; height:18px; float:left; margin-top:13px; "> <a href="/<?php echo path_to_theme(); ?>/templates/t/3.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>
+                                                                    
                                                                     <div style="background:#f9f9f9; width:150px;height:225px; float:left; position:relative; left:18px; margin:0px; padding:10px 20px 10px 5px; margin-left:13px;"> <p style=" font-size:14px; font:bold;line-height:18px;  text-align:center;"></p></div>  
 
 
@@ -1004,7 +795,7 @@ jQuery(document).ready(function(){
 
                                                                     </div>
 
-                                                                    <div style="width:18px; height:18px; float:left; margin-top:13px; margin-left:40px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/4.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>
+                                                                    <div style="width:18px; height:18px; float:left; margin-top:13px; margin-left:40px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/4.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>
                                                                 </div>
 
                                                                 <div style="float:left;margin:16px 8px 5px 16px;">
@@ -1129,7 +920,7 @@ jQuery(document).ready(function(){
                                                                                                                         myChart.setOption(option);
                                                                     </script></div>
 
-                                                                <div style="width:18px; height:18px;float:left; position:absolute; top:500px; left:445px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/5.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>
+                                                                <div style="width:18px; height:18px;float:left; position:absolute; top:500px; left:445px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/5.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>
                                                                 <div style="background:#f9f9f9; width:150px;height:225px; float:left; position:relative; left:42px; margin:0px; padding:10px 20px 10px 5px; margin-left:13px;"> <p ></p></div>  
                                                                 <div style="float:left;margin:10px 8px 5px 55px; ">
                                                                     <div id="main4" style="width: 393px;height:225px;"></div>
@@ -1227,7 +1018,7 @@ jQuery(document).ready(function(){
                                                                                                                         // 使用刚指定的配置项和数据显示图表。
                                                                                                           myChart.setOption(option);
                                                                     </script></div>
-                                                                <div style="width:18px; height:18px; float:left; margin-top:13px; margin-left:100px; position:absolute; left:930px; top:490px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/6.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>    
+                                                                <div style="width:18px; height:18px; float:left; margin-top:13px; margin-left:100px; position:absolute; left:930px; top:490px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/6.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>    
                                                             </div>
 
                                                             <div style="float:left;margin:18px 8px 5px 16px;">
@@ -1310,7 +1101,7 @@ jQuery(document).ready(function(){
                                                                                                                     // 使用刚指定的配置项和数据显示图表。
                                                                                                       myChart.setOption(option);
                                                                 </script></div>
-                                                            <div style="width:18px; height:18px; float:left; margin-left:15px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/7.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>  
+                                                            <div style="width:18px; height:18px; float:left; margin-left:15px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/7.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>  
                                                             <div style="background:#f9f9f9; width:150px;height:225px; float:left; margin:0px; padding:10px 20px 10px 5px; margin-left:28px;"> <p ></p></div> 
                                                             <div> 
                                                                 <div id="main" style="float:left;margin:10px 8px 5px 30px; overflow:hidden;">
@@ -1464,7 +1255,7 @@ jQuery(document).ready(function(){
                                                                                                                                 }, 200)
                                                                                                                                 }
                                                                                                                         );
-                                                                    </script></div> <div style="width:18px; height:18px; float:left;  margin-top: 33px;margin-left:15px"> <a href="/<?php echo path_to_theme(); ?>/templates/t/10.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>  </div>
+                                                                    </script></div> <div style="width:18px; height:18px; float:left;  margin-top: 33px;margin-left:15px"> <a href="/<?php echo path_to_theme(); ?>/templates/t/10.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>  </div>
 
                                                             <div style="float:left;margin: 33px 8px 5px -420px;">
                                                                 <div id="main7" style="width: 393px;height:225px;"></div>
@@ -1545,7 +1336,7 @@ jQuery(document).ready(function(){
                                                                                                                             };
                                                                                                                     // 使用刚指定的配置项和数据显示图表。
                                                                                                       myChart.setOption(option);
-                                                                </script></div><div style="width:18px; height:18px; float:left; margin-left:15px;position: absolute; top: 730px; left: 1018px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/9.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>  <div style="background:#f9f9f9; width:150px;height:225px; float:left; margin:0px; padding:10px 20px 10px 5px; margin-left:28px;"> <p ></p></div> 
+                                                                </script></div><div style="width:18px; height:18px; float:left; margin-left:15px;position: absolute; top: 730px; left: 1018px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/9.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>  <div style="background:#f9f9f9; width:150px;height:225px; float:left; margin:0px; padding:10px 20px 10px 5px; margin-left:28px;"> <p ></p></div> 
                                                             <div style="float:left;margin:33px 8px 5px 30px; overflow:hidden;">
                                                                 <div id="main118" style="width: 393px;height:225px;"></div>
 
@@ -1731,7 +1522,7 @@ jQuery(document).ready(function(){
                                                                 </script>
 
                                                             </div> 
-                                                            <div style="width:18px; height:18px; float:left; margin-left:15px; position: absolute; left: 1020px; top: 1010px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/11.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div>    
+                                                            <div style="width:18px; height:18px; float:left; margin-left:15px; position: absolute; left: 1020px; top: 1010px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/11.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>    
                                                         </div>
                                                         <div style="float:left;margin:33px 8px 5px 30px; ">
                                                             <div id="main3" style="width: 393px;height:225px;"></div>
@@ -2020,17 +1811,49 @@ jQuery(document).ready(function(){
                                                                                                                 // 使用刚指定的配置项和数据显示图表。
                                                                                                                 myChart.setOption(option);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                                             </script>
-                                                        </div><div style="width:18px; height:18px; float:left; margin-top:13px;margin-right:10px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/12.html"><img src="/<?php echo path_to_theme(); ?>/images/fangda.png"></a></div></div>
+                                                        </div><div style="width:18px; height:18px; float:left; margin-top:13px;margin-right:10px;"> <a href="/<?php echo path_to_theme(); ?>/templates/t/12.html"><img src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/fangda.png"></a></div>
+                                                    
+                                                        <div  style="position:absolute;top:720px;left:658px;">
+                                                            <img  style="width:363px; height:225px;"src="http://bigdata-zyhc.chinacloudsites.cn/sites/all/themes/zunyitheme/images/gongye.png">
+                                                        </div>
+                                                        
+                                                    </div>
                                                 </div>
+
+
+
+
+
+
                                             </div>  </div>
+
                                     </div> <!-- /.block -->
                                 </div>
                                 <!-- /.region -->
                             </div>
                         </div>
+
                     </div>
                 </div>
+
+
+
             </div>
         </div>
 

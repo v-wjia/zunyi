@@ -22,17 +22,23 @@
 
 <div class="hc_footer clearfix">
     <div class="con">
-        <p class="footer_con1">Copyright 2016 www.zyhc.gov.cn All Rights Reserved.</p>
-        <p class="footer_con2">CP备案：黔ICP备05001044号</p>
+        <!--<p class="footer_con1">Copyright 2016 www.zyhc.gov.cn All Rights Reserved.</p>-->
+        <!--<p class="footer_con2">CP备案：黔ICP备05001044号</p>-->
         <!--<p class="footer_con3">国际联网备案：黔ICP备05001044号</p>-->
-        <div class="footer_con4">
-            <span><a href="http://www.zyhc.gov.cn/" target="_blank">汇川区政府官网</a></span>
-            <img src="/<?php echo path_to_theme(); ?>/images/footer1.png" alt="">
-            <!--<img src="/<?php echo path_to_theme(); ?>/images/footer1.png" alt="">-->
+        <!--        <div class="footer_con4">
+                    <span><a href="http://www.zyhc.gov.cn/" target="_blank">汇川区政府官网</a></span>
+                </div>-->
+        <div class="footer-logo">
+            <img alt="" src="/<?php echo path_to_theme(); ?>/images/chinacqlogo_1.png"><img alt="" src="/<?php echo path_to_theme(); ?>/images/MSFT_logo_rgb.png">
+        </div>
+        <div class="copy-info">
+            <p>Copyright 2015 www.zyhc.gov.cn All Rights Reserved.</p>
+            <p>遵义市汇川区人民政府版权所有</p> 
+            <p>ICP备案：黔ICP备05001044号</p>
         </div>
         <div class="footer_con5 clearfix">
             <ul>
-                <li class="li1"><a href="">遵义市政府</a></li>
+                <li class="li1"><a href="">聚焦汇川</a></li>
                 <li class="li2"><a href="">Microsoft亚太云生态</a></li>
                 <li class="li3"><a href="">Microsoft云科技</a></li>
             </ul>
